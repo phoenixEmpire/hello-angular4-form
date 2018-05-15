@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserInputComponent } from './user-input/user-input.component';
 import { HeroFormComponent } from './template-driven/hero-form.component';
+import { ForbiddenNameDirective } from './directive/forbidden-name.directive';
 
 const routes: Routes = [
   { path: 'user-input', component: UserInputComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     UserInputComponent,
-    HeroFormComponent
+    HeroFormComponent,
+    ForbiddenNameDirective
   ],
   imports: [
     BrowserModule,
