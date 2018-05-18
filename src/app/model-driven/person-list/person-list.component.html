@@ -1,0 +1,25 @@
+<p>
+    在响应式编程范式中，组件会负责维护数据模型的不可变性，把模型当做纯粹的原始数据源。 组件不会直接更新数据模型，而是把用户的修改提取出来，把它们转发给外部的组件或服务，外部程序才会使用这些进行处理（比如保存它们）， 并且给组件返回一个新的数据模型，以反映模型状态的变化。
+</p>
+
+<h3 *ngIf="isLoading">
+  <i>Loading persons...</i>
+</h3>
+
+<h3 *ngIf="!isLoading">
+  <i>
+    Select a person:
+  </i>
+</h3>
+
+<nav>
+  <button (click)="getPersons();" class="btn btn-primary">Refresh</button>
+  <a *ngFor="let person of persons | async" (click)="select(person);">{{person.name}}</a>
+</nav>
+
+<div *ngIf="selectedPerson">
+  <hr/>
+  <h5>Person Detail ( person-list.component.html )</h5>
+  <p>{{selectedPerson | json}}</p>
+  <app-person-detail [person]="selectedPerson"></app-person-detail>
+</div>
