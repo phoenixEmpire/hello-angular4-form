@@ -11,7 +11,7 @@ export class PersonService {
     getPersons(): Observable<Person[]> {
         return of(persons).pipe(delay(this.delayMs));
     }
-    
+
     updatePerson(person: Person): Observable<Person> {
         const oldPerson = persons.find(p => person.id === p.id);
         const newPerson = Object.assign(oldPerson, person);
