@@ -13,13 +13,16 @@ import { PersonService } from './model-driven/person.service';
 import { HeroFormTemplateComponent } from './form-validate/template-driven/hero-form-template.component';
 import { ForbiddenNameValidatorDirective } from './form-validate/forbidden-name.directive';
 import { HeroFormModelComponent } from './form-validate/model-driven/hero-form-model.component';
+import { DynamicFormComponent } from './dynamic-form/form/dynamic-form.component';
+import { DynamicFormQuestionComponent } from './dynamic-form/form/dynamic-form-question.component';
 
 const routes: Routes = [
   { path: 'user-input', component: UserInputComponent },
   { path: 'template-driven', component: HeroFormComponent },
   { path: 'model-driven', component: PersonListComponent },
   { path: 'form-validate/template-driven', component: HeroFormTemplateComponent },
-  { path: 'form-validate/model-driven', component: HeroFormModelComponent }
+  { path: 'form-validate/model-driven', component: HeroFormModelComponent },
+  { path: 'dynamic-form', component: DynamicFormComponent }
 ];
 
 @NgModule({
@@ -31,7 +34,9 @@ const routes: Routes = [
     PersonDetailComponent,
     HeroFormTemplateComponent,
     HeroFormModelComponent,
-    ForbiddenNameValidatorDirective
+    ForbiddenNameValidatorDirective,
+    DynamicFormComponent,
+    DynamicFormQuestionComponent
   ],
   imports: [
     BrowserModule,
